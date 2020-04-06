@@ -1,6 +1,5 @@
-package com.code.data;
+package com.code;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -9,11 +8,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date: 2020-04-06.17:14
  */
 @SpringBootApplication
-@MapperScan(basePackages = {"com.code"})
-public class DataApplication {
+public class DataSourceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DataApplication.class, args);
+        SpringApplication.run(DataSourceApplication.class, args);
     }
 
 }

@@ -1,39 +1,58 @@
-#spring:
-#  datasource:
-#    data1:
-#      url: jdbc:mysql://127.0.0,1:3306/demo1?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&useSSL=false&serverTimezone=Hongkong
-#      username: root
-#      password:
-#      driver-class-name: com.mysql.cj.jdbc.Driver
-#    data2:
-#      url: jdbc:mysql://127.0.0,1:3306/demo1?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&useSSL=false&serverTimezone=Hongkong
-#      username: root
-#      password:
-#      driver-class-name: com.mysql.cj.jdbc.Driver
-
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mysql://127.0.0.1:3306/demo1?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&useSSL=false&serverTimezone=Hongkong
-    username: root
-    password:
     hikari:
-      ## 连接池
-      poolName: MyPool
-      ## 最小空闲连接数量
-      minimumIdle: 5
-      ## 连接池最大连接数，默认是10
-      maximumPoolSize: 10
-      ## 空闲连接存活最大时间，默认600000（10分钟）
-      idleTimeout: 180000
-      ## 此属性控制从池返回的连接的默认自动提交行为,默认值：true
-      autoCommit: true
-      ## 此属性控制池中连接的最长生命周期，值0表示无限生命周期，默认1800000即30分钟
-      maxLifetime: 1800000
-      ## 数据库连接超时时间,默认30秒，即30000
-      connectionTimeout: 30000
-      connectionTestQuery: SELECT 1
+      data1:
+        poolName: data1
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        minimumIdle: 1
+        maximumPoolSize: 3
+        idleTimeout: 180000
+        autoCommit: true
+        maxLifetime: 1800000
+        connectionTimeout: 250
+        connectionTestQuery: SELECT 1
+        jdbc-url: jdbc:mysql://127.0.0.1:3306/demo1?serverTimezone=UTC&characterEncoding=utf-8
+        username: root
+        password:
+      data2:
+        poolName: data2
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        minimumIdle: 1
+        maximumPoolSize: 3
+        idleTimeout: 180000
+        autoCommit: true
+        maxLifetime: 1800000
+        connectionTimeout: 250
+        connectionTestQuery: SELECT 1
+        jdbc-url: jdbc:mysql://127.0.0.1:3306/demo2?serverTimezone=UTC&characterEncoding=utf-8
+        username: root
+        password:
+
+#spring:
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    type: com.zaxxer.hikari.HikariDataSource
+#    url: jdbc:mysql://127.0.0.1:3306/demo1?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&useSSL=false&serverTimezone=Hongkong
+#    username: root
+#    password:
+#    hikari:
+#      ## 连接池
+#      poolName: MyPool
+#      ## 最小空闲连接数量
+#      minimumIdle: 5
+#      ## 连接池最大连接数，默认是10
+#      maximumPoolSize: 10
+#      ## 空闲连接存活最大时间，默认600000（10分钟）
+#      idleTimeout: 180000
+#      ## 此属性控制从池返回的连接的默认自动提交行为,默认值：true
+#      autoCommit: true
+#      ## 此属性控制池中连接的最长生命周期，值0表示无限生命周期，默认1800000即30分钟
+#      maxLifetime: 1800000
+#      ## 数据库连接超时时间,默认30秒，即30000
+#      connectionTimeout: 30000
+#      connectionTestQuery: SELECT 1
 
 # Mybatis Config
 mybatis:
@@ -41,7 +60,7 @@ mybatis:
   typeAliasesPackage: com.code.entity
 
 
-# Logger Config
-logging:
-  level:
-    com.code: debug
+## Logger Config
+#logging:
+#  level:
+#    com.code: debug

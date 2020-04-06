@@ -1,4 +1,4 @@
-package com.code.data.service;
+package com.code.datasource.service;
 
 import com.code.dao.UserMapper;
 import com.code.entity.User;

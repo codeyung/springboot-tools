@@ -1,6 +1,7 @@
-package com.code.data;
+package com.code;
 
-import com.code.data.service.UserService;
+import com.code.datasource.config.DefaultRouteStrategy;
+import com.code.datasource.service.UserService;
 import com.code.entity.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,15 +22,25 @@ import java.util.List;
 public class DataTest {
 
     @Autowired
+    private DefaultRouteStrategy routeStrategy;
+
+    @Autowired
     private UserService userService;
 
 
+    private String source1 = "data1";
+    private String source2 = "data2";
+    private String ext = "";
+
     @Test
-    public void test(){
+    public void test() {
+        routeStrategy.route(source1, "");
         List<User> list = userService.getAll();
         list.forEach(System.out::println);
+        routeStrategy.route(source2, "");
+        list = userService.getAll();
+        list.forEach(System.out::println);
     }
-
 
 
 }
