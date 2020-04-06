@@ -14,6 +14,7 @@ springboot 项目中常用的工具集
  数据源动态路由|dynamic-data-source|常遇到的多数据源、或相同表结构不同库等情况
  事务扩展|transaction-extension|需要在核心事物提交前、后做某些操作（强一致性操作or最终一致）
  逻辑扩展|logic-extension|针对代码中多条件（if switch 等情况）减少逻辑代码增强扩展性
+ 代码生成组件|generator|使用模板与myabtis扩展组件根据库表生成代码已经页面相关
  ...持续添加
 
 

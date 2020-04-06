@@ -88,6 +88,7 @@
         <module>logic-extension</module>
         <module>transaction-extension</module>
         <module>common</module>
+        <module>generator</module>
     </modules>
 
 </project>
