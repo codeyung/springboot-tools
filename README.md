@@ -20,6 +20,6 @@ springboot 项目中常用的工具集
 
 ## 2. 使用的框架方案
 
-* spring-boot 2.3.0.M4  不好意思就是用了最新版本
+* spring-boot 2.2.6.RELEASE
 * lombok
 

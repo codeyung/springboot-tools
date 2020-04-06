@@ -10,8 +10,18 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>dynamic-data-source</artifactId>
-    <packaging>pom</packaging>
     <description>dynamicDataSource for spring-boot</description>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>com.example.springboot</groupId>
+            <artifactId>common</artifactId>
+        </dependency>
+    </dependencies>
+
+
+
 
 
 </project>
