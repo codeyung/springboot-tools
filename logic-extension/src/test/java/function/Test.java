@@ -38,7 +38,7 @@ public class Test {
 
 
     public static void main(String[] args) throws Exception {
-//        Test.test1();
+        Test.test1();
         Test.test2();
         test3();
     }
