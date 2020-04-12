@@ -8,7 +8,8 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * 逻辑存储对象
+ * @author: codeyung  E-mail:yjc199308@gmail.com
+ * @date: 2020-04-12.03:02
  */
 @Component
 public class LogicRepository {
