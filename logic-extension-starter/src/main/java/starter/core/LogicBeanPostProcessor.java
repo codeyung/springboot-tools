@@ -39,10 +39,11 @@ public class LogicBeanPostProcessor implements BeanPostProcessor {
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        logger.info("LogicBeanPostProcessor postProcessAfterInitialization-start, beanName:{}", beanName);
         Class<?> targetClass = bean.getClass();
 
         if (bean instanceof LogicFunction) {
+
+            logger.info("LogicBeanPostProcessor postProcessAfterInitialization-start, beanName:{}", beanName);
 
             Annotation[] annotations = targetClass.getAnnotations();
             for (Annotation annotation : annotations) {
