@@ -1,7 +1,8 @@
-package starter.impl;
+package starter.logic.impl;
 
 import org.springframework.stereotype.Service;
 import starter.annotation.Logic;
+import starter.logic.TestVoidFunction;
 
 /**
  * @author: codeyung  E-mail:yjc199308@gmail.com
@@ -9,10 +10,9 @@ import starter.annotation.Logic;
  */
 @Service
 @Logic(group = "two", type = 2)
-public class TestReturnReturnTwo implements TestReturnFunction {
+public class TestVoidTwo implements TestVoidFunction {
     @Override
-    public int puls(int var) {
-        System.out.println("TestReturnReturnTwo");
-        return var;
+    public void puls(int var) {
+        System.out.println("TestVoidTwo");
     }
 }

@@ -1,7 +1,7 @@
-package starter.impl;
+package starter.logic;
 
 
-import starter.LogicFunction;
+import starter.function.LogicFunction;
 
 /**
  * @author: codeyung  E-mail:yjc199308@gmail.com

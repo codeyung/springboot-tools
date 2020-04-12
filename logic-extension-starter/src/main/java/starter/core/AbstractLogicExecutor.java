@@ -1,5 +1,8 @@
-package starter;
+package starter.core;
 
+
+import starter.function.CheckedConsumer;
+import starter.function.CheckedFunction;
 
 import java.util.function.Consumer;
 import java.util.function.Function;

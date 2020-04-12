@@ -1,4 +1,4 @@
-package starter;
+package starter.function;
 
 /**
  * @author: codeyung  E-mail:yjc199308@gmail.com

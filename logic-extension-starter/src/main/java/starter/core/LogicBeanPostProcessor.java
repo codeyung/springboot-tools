@@ -1,15 +1,13 @@
-package starter.annotation;
+package starter.core;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.stereotype.Component;
-import starter.LogicCoordinate;
-import starter.LogicFunction;
-import starter.LogicRepository;
+import starter.config.LogicProperties;
+import starter.function.LogicFunction;
 import starter.util.BeanCopierUtil;
 
 import java.lang.annotation.Annotation;
@@ -27,11 +25,8 @@ public class LogicBeanPostProcessor implements BeanPostProcessor {
 
     private static final Logger logger = LoggerFactory.getLogger(LogicBeanPostProcessor.class);
 
-    @Value("${logic.extension.interfaceClassName}")
-    String interfaceClassName;
-
-    @Value("${logic.extension.conditionClassName}")
-    String conditionClassName;
+    @Autowired
+    private LogicProperties logicProperties;
 
     @Autowired
     private LogicRepository logicRepository;
@@ -51,19 +46,21 @@ public class LogicBeanPostProcessor implements BeanPostProcessor {
             Annotation[] annotations = targetClass.getAnnotations();
             for (Annotation annotation : annotations) {
 
-                if (annotation.annotationType().getName().equals(interfaceClassName)) {
+                String annotationClassName = annotation.annotationType().getName();
 
-                    InvocationHandler invo = Proxy.getInvocationHandler(annotation);
-                    Map map = getMemberValues(invo);
+                if (logicProperties.filterAnnotationClassName(annotationClassName)) {
 
-                    Object condition = createCondition(map);
+                    Map map = getMemberValues(annotation);
+
+                    String conditionClassName = logicProperties.getConditionClassName(annotationClassName);
+
+                    Object condition = createCondition(conditionClassName, map);
                     LogicCoordinate coordinate = new LogicCoordinate(targetClass, condition);
 
                     registerFunction(bean, beanName, coordinate);
 
                     return bean;
                 }
-
 
             }
 
@@ -74,8 +71,9 @@ public class LogicBeanPostProcessor implements BeanPostProcessor {
 
     }
 
-    private Map getMemberValues(InvocationHandler invo) {
+    private Map getMemberValues(Annotation annotation) {
         try {
+            InvocationHandler invo = Proxy.getInvocationHandler(annotation);
             Field field = invo.getClass().getDeclaredField("memberValues");
             field.setAccessible(true);
             return (Map) field.get(invo);
@@ -85,7 +83,7 @@ public class LogicBeanPostProcessor implements BeanPostProcessor {
         throw new RuntimeException("LogicBeanPostProcessor Interface LogicFunction annotation not found values");
     }
 
-    private Object createCondition(Map map) {
+    private Object createCondition(String conditionClassName, Map map) {
         try {
             Object condition = Class.forName(conditionClassName)
                     .newInstance();

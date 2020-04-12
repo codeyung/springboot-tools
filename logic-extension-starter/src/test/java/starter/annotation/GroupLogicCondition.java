@@ -6,21 +6,18 @@ import java.util.Objects;
  * @author: codeyung  E-mail:yjc199308@gmail.com
  * @date: 2020-04-12.00:40
  */
-public class LogicCondition {
+public class GroupLogicCondition {
 
     public static final String LOGIC_GROUP = "default";
-    public static final int LOGIC_TYPE = 0;
 
     private String group;
-    private int type;
 
 
-    public LogicCondition() {
+    public GroupLogicCondition() {
     }
 
-    public LogicCondition(String group, int type) {
+    public GroupLogicCondition(String group) {
         this.group = group;
-        this.type = type;
     }
 
     public String getGroup() {
@@ -31,16 +28,8 @@ public class LogicCondition {
         this.group = group;
     }
 
-    public int getType() {
-        return type;
-    }
-
-    public void setType(int type) {
-        this.type = type;
-    }
-
-    public static LogicCondition newDefault() {
-        return new LogicCondition(LOGIC_GROUP, LOGIC_TYPE);
+    public static GroupLogicCondition newDefault() {
+        return new GroupLogicCondition(LOGIC_GROUP);
     }
 
     @Override
@@ -51,13 +40,9 @@ public class LogicCondition {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        LogicCondition that = (LogicCondition) o;
+        GroupLogicCondition that = (GroupLogicCondition) o;
 
         if (!Objects.equals(group, that.group)) {
-            return false;
-        }
-
-        if (type != that.type) {
             return false;
         }
 
@@ -66,16 +51,14 @@ public class LogicCondition {
 
     @Override
     public int hashCode() {
-        return Objects.hash(group, type);
+        return Objects.hash(group);
     }
 
     @Override
     public String toString() {
         return "LogicCondition{" +
                 "group='" + group + '\'' +
-                ", type=" + type +
                 '}';
     }
-
 
 }
