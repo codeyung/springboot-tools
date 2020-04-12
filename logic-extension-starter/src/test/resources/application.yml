@@ -1,0 +1,4 @@
+logic:
+  extension:
+    interfaceClassName: starter.annotation.Logic
+    conditionClassName: starter.annotation.LogicCondition
