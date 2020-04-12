@@ -3,6 +3,7 @@ package starter.core;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
+import starter.config.LogicCoordinate;
 import starter.function.LogicFunction;
 
 import java.util.Map;

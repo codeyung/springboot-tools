@@ -1,4 +1,4 @@
-package starter.core;
+package starter.config;
 
 import org.apache.commons.lang3.ArrayUtils;
 

@@ -6,6 +6,7 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.stereotype.Component;
+import starter.config.LogicCoordinate;
 import starter.config.LogicProperties;
 import starter.function.LogicFunction;
 import starter.util.BeanCopierUtil;
