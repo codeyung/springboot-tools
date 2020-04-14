@@ -24,7 +24,7 @@ public class LogicRepository {
         if (coordinate == null) {
             return null;
         }
-        logger.debug("[getFunction] {}", coordinate);
+        logger.debug("getFunction {}", coordinate);
         return functionMap.get(coordinate);
     }
 

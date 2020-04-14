@@ -20,7 +20,7 @@ public class LogicExecutor extends AbstractLogicExecutor {
 
     @Override
     protected <Func> Func getFunction(Class<Func> targetClz, Object condition) {
-        logger.debug("[getFunction]: " + targetClz.getClass().getSimpleName());
+        logger.debug("getFunction: " + targetClz.getClass().getSimpleName());
         Func func = getFunctionBycondition(targetClz, condition);
         return func;
     }
@@ -29,7 +29,7 @@ public class LogicExecutor extends AbstractLogicExecutor {
         checkNull(condition);
 
         String logicFunctionName = targetClz.getName();
-        logger.debug("[getFunctionBycondition]:logicFunctionName:{} ,LogicCondition:{}", logicFunctionName, condition);
+        logger.debug("getFunctionBycondition :logicFunctionName:{} ,LogicCondition:{}", logicFunctionName, condition);
 
         LogicCoordinate coordinate = new LogicCoordinate(logicFunctionName, condition);
 

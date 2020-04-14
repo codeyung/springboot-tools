@@ -77,7 +77,7 @@ public class LogicCoordinate {
             targetClass = targetClass.getSuperclass();
         } while (targetClass != null && targetClass != Object.class);
 
-        throw new RuntimeException("[LogicCoordinate] Your name of LogicFunction for " + targetClz + " is not valid");
+        throw new RuntimeException("LogicCoordinate Your name of LogicFunction for " + targetClz + " is not valid");
     }
 
     @Override
