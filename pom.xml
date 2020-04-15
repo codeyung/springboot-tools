@@ -122,6 +122,7 @@
         <module>transaction-extension</module>
         <module>common</module>
         <module>generator</module>
+        <module>logic-spring-boot-starter</module>
     </modules>
 
 </project>
