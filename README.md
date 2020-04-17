@@ -47,7 +47,7 @@ public @interface GroupLogic {
     String group() default LogicCondition.LOGIC_GROUP;
 }
 ```
- ### 创建逻辑注解的对象 Condition 覆盖equals与hashCode 后续有需要优化为注解生成的唯一值 删掉此对象
+#### 创建逻辑注解的对象 Condition 覆盖equals与hashCode 后续有需要优化为注解生成的唯一值 删掉此对象
 ```java
 public class GroupLogicCondition {
 
