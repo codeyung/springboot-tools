@@ -33,10 +33,10 @@ public class TestGroupLogicFunction {
 
         condition = GroupLogicCondition.newDefault();
         int result = logicExecutor.execute(TestGroupReturnFunction.class, condition, function -> function.group(0));
-        System.out.println(result);
+        System.out.println("newDefault : "+result);
         condition = new GroupLogicCondition("one");
         result = logicExecutor.execute(TestGroupReturnFunction.class, condition, function -> function.group(1));
-        System.out.println(result);
+        System.out.println("one : "+result);
 
 
     }

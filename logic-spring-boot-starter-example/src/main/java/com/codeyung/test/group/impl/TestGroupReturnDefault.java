@@ -15,7 +15,6 @@ public class TestGroupReturnDefault implements TestGroupReturnFunction {
 
     @Override
     public int group(int var) {
-        System.out.println("TestGroupReturnDefault");
         return var;
     }
 

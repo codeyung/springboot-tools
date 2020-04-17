@@ -14,7 +14,6 @@ public class TestGroupReturnOne implements TestGroupReturnFunction {
 
     @Override
     public int group(int var) {
-        System.out.println("TestReturnReturnOne");
         return var;
     }
 }
