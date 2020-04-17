@@ -27,7 +27,7 @@ springboot 项目中常用的工具集
 
 ## 3. logic-spring-boot-starter 使用方式
 
-### pom.xml
+#### pom.xml
 ```xml
 <dependencies>
     <dependency>
@@ -37,7 +37,7 @@ springboot 项目中常用的工具集
     </dependency>
 </dependencies>
  ```
- ### 定义逻辑注解 @interface
+ #### 定义逻辑注解 @interface
 ```java
 @Inherited
 @Retention(RetentionPolicy.RUNTIME)
@@ -106,19 +106,19 @@ public class GroupLogicCondition {
 
 }
 ```
-### application.yml or application.properties map类型 key:value （逻辑注解:逻辑对象）
+#### application.yml or application.properties map类型 key:value （逻辑注解:逻辑对象）
 ```yaml
 logic:
   extensions:
     com.codeyung.test.annotation.GroupLogic: com.codeyung.test.annotation.GroupLogicCondition
 ```
- ### 定义接口 逻辑扩展的interface 继承 LogicFunction
+#### 定义接口 逻辑扩展的interface 继承 LogicFunction
 ```java
 public interface TestGroupReturnFunction extends LogicFunction {
     int group(int var);
 }
 ```
- ### 默认实现 default
+#### 默认实现 default
 ```java
 @Service
 @GroupLogic
@@ -133,7 +133,7 @@ public class TestGroupReturnDefault implements TestGroupReturnFunction {
 
 }
 ```
- ### 扩展实现 one
+#### 扩展实现 one
 ```java
 @Service
 @GroupLogic(group = "one")
@@ -146,7 +146,7 @@ public class TestGroupReturnOne implements TestGroupReturnFunction {
     }
 }
 ```
- ### 测试用例
+#### 测试用例
 ```java
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = TestStarterApplication.class)
@@ -168,7 +168,7 @@ public class TestGroupLogicFunction {
 
 }
 ```
- ### 返回结果
+#### 返回结果
 ```
 newDefault : 0
 one : 1
