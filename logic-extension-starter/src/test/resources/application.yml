@@ -1,4 +1,0 @@
-logic:
-  extensions:
-    starter.annotation.Logic: starter.annotation.LogicCondition
-    starter.annotation.GroupLogic: starter.annotation.GroupLogicCondition

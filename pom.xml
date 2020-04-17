@@ -117,12 +117,12 @@
     <modules>
         <module>dynamic-data-source</module>
         <module>cache</module>
-        <module>logic-extension</module>
-        <module>logic-extension-starter</module>
         <module>transaction-extension</module>
         <module>common</module>
         <module>generator</module>
+        <module>logic-spring-boot-autoconfigure</module>
         <module>logic-spring-boot-starter</module>
+        <module>logic-spring-boot-starter-example</module>
     </modules>
 
 </project>

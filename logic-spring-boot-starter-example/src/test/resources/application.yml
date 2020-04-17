@@ -1,0 +1,4 @@
+logic:
+  extensions:
+    com.codeyung.test.annotation.Logic: com.codeyung.test.annotation.LogicCondition
+    com.codeyung.test.annotation.GroupLogic: com.codeyung.test.annotation.GroupLogicCondition
