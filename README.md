@@ -179,7 +179,7 @@ public class CheckedReturnTwo implements CheckedReturnFunction {
 public class TestLogicFunction {
 
     @Autowired
-    private LogicExecutor logicExecutor;
+    `private LogicExecutor logicExecutor;`
 
     @Test
     public void testVoid() {
@@ -189,7 +189,7 @@ public class TestLogicFunction {
         LogicCondition condition = LogicCondition.newDefault();
         String str1 = MessageFormat.format(str, condition);
         System.out.println(str1);
-        logicExecutor.executeVoid(VoidFunction.class, condition, function -> function.puls(0));
+        `logicExecutor.executeVoid(VoidFunction.class, condition, function -> function.puls(0))`;
 
         condition = new LogicCondition("one", 1);
         str1 = MessageFormat.format(str, condition);
@@ -211,7 +211,7 @@ public class TestLogicFunction {
             LogicCondition condition = LogicCondition.newDefault();
             String str1 = MessageFormat.format(str, condition);
             System.out.println(str1);
-            logicExecutor.executeVoidCheckedFunc(CheckedVoidFunction.class, condition, function -> function.puls(0));
+            `logicExecutor.executeVoidCheckedFunc(CheckedVoidFunction.class, condition, function -> function.puls(0))`;
 
             condition = new LogicCondition("one", 1);
             str1 = MessageFormat.format(str, condition);
@@ -233,7 +233,7 @@ public class TestLogicFunction {
         String str = "condition:{0},result:{1},execute";
 
         LogicCondition condition = LogicCondition.newDefault();
-        int result = logicExecutor.execute(ReturnFunction.class, condition, function -> function.puls(0));
+        int result = `logicExecutor.execute(ReturnFunction.class, condition, function -> function.puls(0))`;
         String str1 = MessageFormat.format(str, condition, result);
         System.out.println(str1);
 
@@ -255,7 +255,7 @@ public class TestLogicFunction {
         String str = "condition:{0},result:{1},executeCheckedFunc";
         try {
             LogicCondition condition = LogicCondition.newDefault();
-            int result = logicExecutor.executeCheckedFunc(CheckedReturnFunction.class, condition, function -> function.puls(1));
+            int result = `logicExecutor.executeCheckedFunc(CheckedReturnFunction.class, condition, function -> function.puls(1))`;
             String str1 = MessageFormat.format(str, condition, result);
             System.out.println(str1);
 
