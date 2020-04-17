@@ -1,7 +1,7 @@
 package com.codeyung.test.logic.impl;
 
 import com.codeyung.test.annotation.Logic;
-import com.codeyung.test.logic.TestVoidFunction;
+import com.codeyung.test.logic.CheckedReturnFunction;
 import org.springframework.stereotype.Service;
 
 /**
@@ -9,12 +9,11 @@ import org.springframework.stereotype.Service;
  * @date: 2020-04-12.02:16
  */
 @Service
-@Logic
-public class TestVoidDefault implements TestVoidFunction {
+@Logic(group = "one", type = 1)
+public class CheckedReturnOne implements CheckedReturnFunction {
 
     @Override
-    public void puls(int var) {
-        System.out.println("TestVoidDefault");
+    public int puls(int var) throws Exception {
+        return var;
     }
-
 }

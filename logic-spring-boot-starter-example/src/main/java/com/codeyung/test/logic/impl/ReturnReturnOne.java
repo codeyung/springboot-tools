@@ -1,7 +1,7 @@
 package com.codeyung.test.logic.impl;
 
 import com.codeyung.test.annotation.Logic;
-import com.codeyung.test.logic.TestReturnFunction;
+import com.codeyung.test.logic.ReturnFunction;
 import org.springframework.stereotype.Service;
 
 /**
@@ -9,12 +9,10 @@ import org.springframework.stereotype.Service;
  * @date: 2020-04-12.02:16
  */
 @Service
-@Logic
-public class TestReturnDefault implements TestReturnFunction {
-
+@Logic(group = "one", type = 1)
+public class ReturnReturnOne implements ReturnFunction {
     @Override
     public int puls(int var) {
-        System.out.println("TestReturnReturnDefault");
         return var;
     }
 }

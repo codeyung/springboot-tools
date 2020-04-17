@@ -1,7 +1,7 @@
 package com.codeyung.test.logic.impl;
 
 import com.codeyung.test.annotation.Logic;
-import com.codeyung.test.logic.TestVoidFunction;
+import com.codeyung.test.logic.VoidFunction;
 import org.springframework.stereotype.Service;
 
 /**
@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service;
  * @date: 2020-04-12.02:16
  */
 @Service
-@Logic(group = "one", type = 1)
-public class TestVoidOne implements TestVoidFunction {
+@Logic(group = "two", type = 2)
+public class VoidTwo implements VoidFunction {
     @Override
     public void puls(int var) {
-        System.out.println("TestVoidOne");
+        System.out.println("VoidTwo");
     }
 }

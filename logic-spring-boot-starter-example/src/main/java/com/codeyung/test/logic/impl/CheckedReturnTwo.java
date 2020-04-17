@@ -1,7 +1,7 @@
 package com.codeyung.test.logic.impl;
 
 import com.codeyung.test.annotation.Logic;
-import com.codeyung.test.logic.TestReturnFunction;
+import com.codeyung.test.logic.CheckedReturnFunction;
 import org.springframework.stereotype.Service;
 
 /**
@@ -10,10 +10,11 @@ import org.springframework.stereotype.Service;
  */
 @Service
 @Logic(group = "two", type = 2)
-public class TestReturnReturnTwo implements TestReturnFunction {
+public class CheckedReturnTwo implements CheckedReturnFunction {
+
     @Override
-    public int puls(int var) {
-        System.out.println("TestReturnReturnTwo");
-        return var;
+    public int puls(int var) throws Exception {
+        throw new RuntimeException("CheckedReturnTwo Exception");
+//        return var;
     }
 }
