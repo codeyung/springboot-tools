@@ -16,7 +16,7 @@ springboot 项目中常用的工具集
  逻辑扩展增强自动配置|logic-spring-boot-autoconfigure|减少代码中逻辑判断使用自定义条件对象、函数式调用方法、支持配置
  逻辑扩展增强依赖|logic-spring-boot-starter|逻辑扩展增强依赖
  逻辑扩展增强示例|logic-spring-boot-starter-example|逻辑扩展增强示例
- 代码生成组件|generator|使用模板与myabtis扩展组件根据库表生成代码已经页面相关
+ 代码生成组件|generator|使用模板与myabtis扩展组件根据库表生成代码以及页面相关
  ...持续添加
 
 
