@@ -11,6 +11,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class CounterRule {
 
 
+    //注意使用Atomic保证原子性
     private static final AtomicInteger count = new AtomicInteger(0);
 
     public static void main(String[] args) throws InterruptedException {
