@@ -115,14 +115,14 @@
     </build>
 
     <modules>
-        <module>dynamic-data-source</module>
-        <module>cache</module>
-        <module>transaction-extension</module>
         <module>common</module>
+        <module>dynamic-cache</module>
+        <module>dynamic-data-source</module>
         <module>generator</module>
         <module>logic-spring-boot-autoconfigure</module>
         <module>logic-spring-boot-starter</module>
         <module>logic-spring-boot-starter-example</module>
+        <module>transaction-extension</module>
     </modules>
 
 </project>
