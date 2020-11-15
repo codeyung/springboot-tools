@@ -1,3 +1,0 @@
-logic:
-  extensions:
-    com.codeyung.test.annotation.Logic: com.codeyung.test.annotation.LogicCondition
